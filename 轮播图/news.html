@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>news_carousel</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box{
+			width:480px;
+			height:32px;
+			text-align:center;
+			border:3px solid orange;
+			position:relative;
+			margin:100px auto;
+			/*overflow:hidden;*/
+		}
+		ul{
+			position:absolute;
+			left:0;
+			bottom:-32px;
+		}
+		ul li{
+			list-style:none;
+			width:480px;
+			height:32px;
+			line-height:32px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li style="background-color:#f0f">习近平谈家风  牵妈妈的手  习近平视察北京四周年</li>
+			<li style="background-color:#f00">以习近平为核心全面深化改革启示录 暖新闻</li>
+			<li style="background-color:#00f">牛先锋：深化对共产党执政规律的认识</li>
+			<li style="background-color:#0f0">中国发展提升话语海外认知度  新时代新气象新作为</li>
+		</ul>
+	</div>
+	<script>
+		$(function() {
+			var timer = setInterval(function() {
+				$(".box li:first").height(0).appendTo($(".box ul")).last().animate({"height":"32px"},500);
+			},1000);
+		})
+		
+	</script>
+</body>
+</html>

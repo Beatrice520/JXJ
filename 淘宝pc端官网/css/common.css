@@ -1,0 +1,156 @@
+ /* 网页通用  开始 */
+
+ /* 浮动 */
+ .header1 li,.search_top li,.search_bottom li
+,.nav li,.load_news li,.app li,.life li
+,.goods li,.purchase li,.store_live li
+,.store_ul li,.specialty li,.hotSale li
+,.guess li,.guarantee li,.footer li{
+	float:left;
+}
+/* 背景 字体 宽度 */
+ body{ 
+	font-family:"宋体";
+	font-size:12px;
+	background:#f5f5f5 url('../img/background.png') no-repeat -130px 139px;
+}
+.bkg{
+	background-color:#fff;
+}
+.zw{
+	width:1349px;
+}
+.zw1{
+ 	width:1190px;
+ 	margin-left:84px;
+}
+/* 鼠标放链接 */
+.point{
+	cursor:pointer;
+}
+/* 右箭头 */
+.gt{
+	font-size:12px;
+	color:#9c9c9c;
+}
+/* #fff字体颜色 */
+.nav li a,.nav li span,.load_button a{
+	color:#fff;
+}
+/* #666字体颜色 */
+.search_bottom a,.nav_left a,.dream,.five{
+	color:#666;
+}
+/* #999字体颜色 */
+.change a,.goods_p2,.purchase1 a,.purchase_2,.sellOut,.fashion_div1 p,.fashion_div2 p{
+	color:#999;
+}
+/* 字体 */
+.nav_left span,.five,.four,p span,.ali,.purchase_p3{
+	font-family:"微软雅黑";
+}
+/*时尚爆料王、品质生活家、特色玩味控、实惠专业户、热卖单品、猜你喜欢  第一行的标题部分  开始 */
+.img{
+	width:4px;
+	height:16px;
+}
+.fashion h2,.family_feature h2,.specialty h2,.hotSale h2,.guess h2{
+	margin-top:5px;
+	padding-left:20px;
+	height:48px;
+	line-height:50px;
+	border-bottom:1px solid #f4f4f4;
+}
+.fashion_word,.family_word,.feature_word,.specialty_word,.hotSale_word,.guess_word{
+	font-weight:bold;
+	font-size:20px;
+	vertical-align:1px;
+}
+/* 时尚爆料王、品质生活家、特色玩味控、实惠专业户、热卖单品、猜你喜欢  第一行的标题部分  结束 */
+
+/* 品质生活家、特色玩味控 下面图模块  开始 */
+.family_l,.family_r,.feature_l,.feature_r{
+	width:294px;
+	height:345px;
+	float:left;
+}
+.family_feature a{
+	color:#000;
+}
+/* 图大模块  开始 */
+.family_lImg,.feature_lImg{
+	padding:20px;
+	border:1px solid #fff;
+}
+.family_lImg:hover{
+	border:1px solid #f40;
+}
+.feature_lImg:hover{
+	border:1px solid #f40;
+}
+.family_r1,.feature_r1{
+	width:292px;
+	height:236px;
+	border:1px solid #fff;
+}
+.family_r1,.feature_r1{
+	border-left:1px solid #f4f4f4;
+	border-bottom:1px solid #f4f4f4;
+}
+.family_r1 h3,.feature_r1 h3{
+	margin-top:35px;
+	margin-left:30px;
+}
+.family_rbImg,.feature_rbImg{
+	width:256px;
+	margin-top:30px;
+	margin-left:20px;
+}
+.family_r1:hover{
+	border:1px solid #f40;
+}
+.feature_r1:hover{
+	border:1px solid #f40;
+}
+/* 图大模块  结束 */
+
+/* 图片小模块  开始 */
+.family_lb,.feature_lb{
+	width:294px;
+	height:116px;
+	border:1px solid #fff;
+}
+.family_lb,.feature_lb{
+	border-top:1px solid #f4f4f4;
+}
+.family_lWord,.feature_lWord{
+	width:122px;
+	height:45px;
+	margin-left:40px;
+	vertical-align:20px;
+}
+.family_lWord h3,.feature_lWord h3,.family_r1 h3,.feature_r1 h3{
+	font-size:18px;
+	font-family:"华文宋体";
+}
+.family_lWord p,.feature_lWord p{
+	margin-top:5px;
+}
+.family_lWord p,.feature_lWord p,.family_r1 span,.feature_r1 span{
+	font-size:12px;
+	color:#999;
+}
+.family_r1 span,.feature_r1 span{
+	font-family:"宋体";
+	margin-left:5px;
+	vertical-align:1px;
+}
+.family_lb:hover{
+	border:1px solid #f40;
+}
+.feature_lb:hover{
+	border:1px solid #f40;
+}
+/* 图片小模块  结束 */
+
+/* 品质生活家、特色玩味控 下面图模块  结束 */

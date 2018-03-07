@@ -1,0 +1,174 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    /*display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;*/
+}
+/*第一屏 开始*/
+.swiper-wrapper .one{
+	background:url('../images/onebg.png') no-repeat;
+	background-size:100% 100%;
+}
+/*音乐 开始*/
+.music{
+	width:60px;
+	height:60px;
+	position:fixed;
+	z-index:10;
+	top: 10px;
+	right: 10px;
+}
+.music .mu{
+	width:100%;
+	display:none;
+}
+.music .muOff{
+	position:absolute;
+	left:8px;
+	top:8px;
+}
+@keyframes run{
+	from{
+		transform:rotate(0deg);
+	}
+	to{
+		transform:rotate(360deg);
+	}
+}
+/*音乐结束*/
+
+/*大图 开始*/
+.swiper-wrapper .pic{
+	height:50%;
+	width:70%;
+	border:9px solid #fff;
+	overflow:hidden;
+	margin:0 auto;
+	margin-top:10%;
+	margin-bottom:1%;
+}
+.swiper-wrapper .pic img{
+	width:100%;
+}
+/*大图 结束*/
+
+/*下方文字 开始*/
+.swiper-wrapper .word{
+	width:70%;
+	height:32%;
+	margin:0 auto;
+	position:relative;
+}
+.swiper-wrapper .word .ring{
+	width:35%;
+	position:absolute;
+	top:7%;
+	left:5%;
+}
+.swiper-wrapper .word .jiehun{
+	width:100%;
+	position:absolute;
+	top:20%;
+	right:0;
+}
+.swiper-wrapper .word .time{
+	width:50%;
+	position:absolute;
+	bottom:0;
+	right:25%;
+}
+/*下方文字 结束*/
+
+/*第一屏 结束*/
+
+/*第二屏 开始*/
+.swiper-wrapper .two{
+	background:url('../images/twobg.jpg') no-repeat;
+	background-size:100% 100%;
+	position:relative;
+}
+/*左边的图 开始*/
+.two .img1{
+	width: 30%;
+	height: 20%;
+	border: 9px solid #FFEBEB;
+	position:absolute;
+	overflow:hidden;
+	top:5%;
+	left:5%;
+	z-index:10;
+}
+.two .img1 img{
+	width:100%;
+}
+/*左边的图 结束*/
+
+/*右边的图 开始*/
+.two .img2{
+	width:60%;
+	height:80%;
+	border: 9px solid #FFEBEB;
+	background-color:#FFEBEB;
+	position:absolute;
+	top:10%;
+	left:30%;
+}
+.two .img2 .top{
+	width:100%;
+	height:60%;
+	overflow:hidden;
+}
+.two .img2 .top img{
+	width:100%;
+}
+.two .img2 .bottom{
+	width:100%;
+	height:35%;
+	margin-top:3%;
+}
+.two .img2 .bottom img{
+	width:100%;
+	float:left;
+	margin-top:1%;
+}
+.two .fengche{
+	width:50%;
+	position:absolute;
+	left:60%;
+	top:40%;
+}
+.two .fengche img{
+	width:100%;
+}
+/*右边的图 结束*/
+
+/*第二屏 结束*/

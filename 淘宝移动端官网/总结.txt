@@ -1,0 +1,37 @@
+1、swiper的js部分
+
+   需要写在swiper.min.js的后面才不会报错，若是将js写到index.js里面，则需要将index.js的顺序调到
+
+   swiper.min.js的后面才行
+
+2、swiper部分应用
+
+   autoplay:3000,//每秒中轮播一次
+
+   loop:true,//可以让图片循环轮播
+
+   pagination:".swiper-pagination",//让小圆点显示
+
+   paginationClickable:true,//实现小圆点点击
+
+   prevButton:".swiper-button-prev",//实现上一页的点击
+
+   nextButton:".swiper-button-next",//实现下一页的点击
+
+　 effect:"flip"//可以实现3D效果的轮播
+
+3、多个swiper应用
+
+   swiper是通过共用的class（swiper-container）来实现效果，所以在共用的class前面加上
+
+   父元素（可以定义一个class或id）来区分
+
+4、多行文本省略
+
+   display: -webkit-box;
+
+   -webkit-box-orient: vertical;
+
+   -webkit-line-clamp: 2;//行数
+
+   overflow: hidden;

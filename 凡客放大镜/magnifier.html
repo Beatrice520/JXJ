@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>凡客放大镜</title>
+	<link rel="stylesheet" href="css/magnifier.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<script type="text/javascript" src="js/js-tools.js"></script>
+</head>
+<body>
+	<div class="left">
+		<div class="magnifier"></div>
+	</div>
+	<div class="right">
+		<img src="img/handsome_800.jpg">
+	</div>
+	<script>
+		var div0 = document.getElementsByTagName('div')[0],
+			div1 = document.getElementsByTagName('div')[1],
+			img = document.getElementsByTagName('img')[0],
+			right = document.getElementsByClassName('right')[0];
+		addEvent(div0,"mouseout",function (e) {
+			var event = e || window.event;
+			right.style.display = "none";
+		});
+		addEvent(div0,"mouseover",function (e) {
+			var event = e || window.event;
+			right.style.display = "block";
+			addEvent(div1,"mousemove",mag);
+		});
+		function mag(e) {
+			var event = e || window.event;
+			disX = event.clientX - div0.offsetLeft;
+			if(scrollY < div0.offsetLeft){
+				disY = event.clientY - div0.offsetTop + scrollY;
+			}else if(scrollY == div0.offsetLeft) {
+				disY = event.clientY;
+			}else{
+				disY = event.clientY + div0.offsetTop;
+			}
+			div1.style.left = disX - 110 +  "px";
+			div1.style.top = disY - 100 + "px";
+			if(parseInt(div1.style.left) < 0) {
+			 	div1.style.left = 0;
+			}
+			if(parseInt(div1.style.left) > 180) {
+			 	div1.style.left = 180 + "px";
+			}
+			if(parseInt(div1.style.top) < 0) {
+			 	div1.style.top = 0;
+			}
+			if(parseInt(div1.style.top) > 200) {
+			 	div1.style.top = 200 + "px";
+			}
+			img.style.left = -2 * parseInt(div1.style.left) + "px";
+			img.style.top = -2 * parseInt(div1.style.top) + "px";
+		}
+	</script>
+</body>
+</html>

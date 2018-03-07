@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Micro_scene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="css/swiper-3.2.7.min.css">
+  <link rel="stylesheet" type="text/css" href="css/Micro_scene.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+</head>
+<body>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide one">
+
+      
+
+      <!-- 大图 开始 -->
+        <div class="pic ani" swiper-animate-effect="zoomIn" swiper-animate-duration='1.5s' swiper-animate-delay="0.3s">
+          <img src="images/one.jpg" >
+        </div>
+      <!-- 大图 结束 -->
+
+      <!-- 文字 开始 -->
+        <div class="word">
+          <img src="images/jiezhi.png" class="ring ani"  swiper-animate-effect="fadeInDown" swiper-animate-duration='1s' swiper-animate-delay="2.6s" >
+          <img src="images/womenjiehunla.png" class="jiehun ani" swiper-animate-effect="fadeInUp" swiper-animate-duration='1s' swiper-animate-delay="1.8s"  >
+          <img src="images/2016117.png" class="time ani" swiper-animate-effect="fadeIn" swiper-animate-duration='1.5s' swiper-animate-delay="3.6s">
+        </div>
+      <!-- 文字 结束 -->
+      </div>
+      <div class="swiper-slide two">
+        <div class="img1 ani" swiper-animate-effect="zoomIn" swiper-animate-duration='1s' swiper-animate-delay="0s">
+          <img src="images/two1.jpg">
+        </div>
+        <div class="img2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration='1.5s' swiper-animate-delay="1s">
+          <div class="top">
+            <img src="images/two2.jpg">
+          </div>
+          <div class="bottom">
+            <img src="images/twoline.png" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration='0.5s' swiper-animate-delay="2.5s">
+            <img src="images/t1.png" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration='1s' swiper-animate-delay="3s">
+            <img src="images/twoline.png" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration='0.5s' swiper-animate-delay="3.5s">
+            <img src="images/t2.png" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration='1s' swiper-animate-delay="4s">
+            <img src="images/twoline.png" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration='0.5s' swiper-animate-delay="4.5s">
+            <img src="images/t3.png" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration='1s' swiper-animate-delay="5s">
+            <img src="images/twoline.png" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration='0.5s' swiper-animate-delay="5.5s">
+            <img src="images/t4.png" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration='1s' swiper-animate-delay="6s">
+            <img src="images/twoline.png" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration='0.5s' swiper-animate-delay="6.5s">
+            <img src="images/t5.png" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration='1s' swiper-animate-delay="7s">
+          </div>
+          <div class="fengche ani" swiper-animate-effect="fadeIn" swiper-animate-duration='1s' swiper-animate-delay="4s">
+            <img src="images/fengche.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+  <!-- 音乐图标 开始 -->
+  <div class="music">
+    <img src="images/music.gif" class="mu">
+    <img src="images/music_off.png" class="muOff">
+    <audio src="images/bgmusic.mp3" preload="auto" loop="loop"></audio>
+  </div>  
+      <!-- 音乐图标 结束 -->
+  <!-- Swiper JS -->
+  <script src="js/swiper-3.2.7.min.js"></script>
+  <script src="js/Micro_scene.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    //必须的js代码
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        direction: 'vertical',
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+    swiperAnimateCache(swiper); //隐藏动画元素 
+    swiperAnimate(swiper); //初始化完成开始动画
+    }, 
+    onSlideChangeEnd: function(swiper){ 
+      swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+      } 
+    });
+    //必须的js代码结束
+  </script>
+</body>
+</html>

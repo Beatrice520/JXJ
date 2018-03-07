@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>choice</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<input type="button" value="全选" class="all">
+	<input type="button" value="反选" class="reverse">
+	<input type="button" value="全不选" class="none"><br />
+	<input type="checkbox" style="margin-top:20px">我爱吃苹果<br />
+	<input type="checkbox">我爱吃甘蔗<br />
+	<input type="checkbox">我爱吃橘子<br />
+	<input type="checkbox">我爱吃枇杷<br />
+	<input type="checkbox">我爱吃石榴<br />
+	<input type="checkbox">我爱吃葡萄<br />
+	<input type="checkbox">我爱吃梨<br />
+	<input type="checkbox">我爱吃西瓜<br />
+	<input type="checkbox">我爱吃芒果<br />
+	<input type="checkbox">我爱吃荔枝<br />
+	<input type="checkbox">我爱吃香蕉<br />
+	<script>
+	$(function() {
+		$(".all").click(function() {
+			$(":checkbox").prop("checked",true);
+		})
+		$(".none").click(function() {
+			$(":checkbox").prop("checked",false);
+		})
+		//方法一
+		// $(".reverse").click(function() {
+		// 	var i = $(":checked");
+		// 	$(":checkbox").prop("checked",true);
+		// 	i.prop("checked",false);//或者使用removeProp("checked");
+		// })
+		//方法二
+		$(".reverse").click(function() {
+			$(":checkbox").prop("checked",function(i,val) {
+				return !val;
+			});
+		})
+		
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片闪光</title>
+	<style>
+		.box{
+			width:520px;
+			height:280px;
+			border:1px solid pink;
+			background:url('7.jpg') no-repeat;
+			margin:100px auto;
+			position:relative;
+			overflow:hidden;
+		}
+		.flash{
+			width:30px;
+			height:590px;
+			background:-webkit-linear-gradient(left,transparent,rgba(255,255,255,0.6),transparent);
+			position:absolute;
+			left:-195px;
+			top:0;
+			transform:skew(-30deg);
+		}
+		.box:hover .flash{
+			left:510px;
+			transition:left 1s;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="flash"></div>
+	</div>
+</body>
+</html>

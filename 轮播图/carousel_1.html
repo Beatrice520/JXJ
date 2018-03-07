@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>carousel_1</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		.box{
+			width:520px;
+			height:280px;
+			border:2px solid #666;
+			margin:60px auto;
+			position:relative;
+			overflow:hidden;
+		}
+		.images{
+			width:3120px;
+			position:absolute;
+			left:0;
+			top:0;
+		}
+		.content{
+			float:left;
+		}
+		ul{
+			position:absolute;
+			right:235px;
+			bottom:15px;
+		}
+		li{
+			width:10px;
+			height:10px;
+			border-radius:50%;
+			float:left;
+			list-style:none;
+			margin-right:10px;
+			background-color:#ccc;
+			opacity:0.6;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="images">
+			<img src="img/1.jpg" class="content">
+			<img src="img/2.jpg" class="content">
+			<img src="img/3.jpg" class="content">
+			<img src="img/4.jpg" class="content">
+			<img src="img/5.jpg" class="content">
+			<img src="img/1.jpg" class="content">
+		</div>
+		<ul>
+			<li style="background-color:#000"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script>
+		$(function() {
+			var i = 0;
+			var timer = setInterval(carousel_1,1000);
+			function carousel_1() {
+				i ++;
+				if(i > 5){
+					i = 1;
+					$(".images").css({"left":"0"});
+				}else{
+					$("li").eq(0).css({"background-color":"#000"}).siblings("li").css({"background-color":"#ccc"})
+				}
+				var left = -520*i;
+				$(".images").stop().animate({"left":left + "px"},300);
+				$("li").eq(i).css({"background-color":"#000"}).siblings("li").css({"background-color":"#ccc"})
+			}
+			$("li").mouseenter(function() {
+				var jqthis = $(this);
+				clearInterval(timer);
+				tt = setTimeout(function() {
+					i = jqthis.index();
+					var left = -520*i;
+					$("li").eq(i).css({"background-color":"#000"}).siblings("li").css({"background-color":"#ccc"})
+					$(".images").stop().animate({"left":left + "px"},300);
+				},200);
+				
+			})
+			$("li").mouseleave(function() {
+				clearTimeout(tt);
+				timer = setInterval(carousel_1,1000);
+			})
+		})
+	</script>
+</body>
+</html>

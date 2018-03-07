@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>验证码干扰</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<canvas width="900" height="500"></canvas>
+	<script>
+		var canvas = document.getElementsByTagName('canvas')[0];
+		var cv = canvas.getContext('2d');
+		cv.fillStyle = "#424242";
+		cv.fillRect(0,0,900,500);
+		cv.font = '30px arial';
+		cv.fillStyle = "deeppink";
+		cv.fillText('you are my sunshine!',300,250);
+		var alldata = cv.getImageData(0,0,900,500);
+		var px = alldata.data.length/4;
+		for(var i = 0; i < 10000; i ++) {
+			var num = Math.floor(Math.random() * px);
+			var r = (num - 1) * 4;
+			alldata.data[r] = Math.floor(Math.random() * 256);
+			alldata.data[r + 1] = Math.floor(Math.random() * 256);
+			alldata.data[r + 2] = Math.floor(Math.random() * 256);
+		}
+		cv.putImageData(alldata,0,0);
+	</script>
+</body>
+</html>

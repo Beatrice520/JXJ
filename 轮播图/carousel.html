@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>轮播图</title>
+	<script type="text/javascript" src="js/js-tools.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/carousel.css" />
+</head>
+<body>
+	<div class="box">
+		<img src="img/1.jpg" style="display:block"/>
+		<img src="img/2.jpg"/>
+		<img src="img/3.jpg"/>
+		<img src="img/4.jpg"/>
+		<img src="img/5.jpg"/>
+		<ul>
+			<li class="li0"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script>
+		// var imgs = document.getElementsByTagName('img'),
+		// 	lis = document.getElementsByTagName('li');
+		// 方法一 淡入淡出(手动点击)
+		// for(var i = 0; i < lis.length; i ++){
+		// 	lis[i].count = i;
+		// 	lis[i].onclick = function (e) {
+		// 		var event = e || window.event;
+		// 		for(var j = 0; j < lis.length; j ++){
+		// 			imgs[j].style.display = "none";
+		// 			lis[j].style.backgroundColor = "#ccc";
+		// 		}
+		// 		imgs[this.count].style.display = "block";
+		// 		this.style.backgroundColor = "#000";
+		// 	}
+		// }
+
+		// 淡入淡出(自动循环)
+		// var i = 0;
+		// var timer = setInterval(test,1000);
+		// function test() {
+		// 	i ++;
+		// 	if(i == 5){
+		// 		i = 0;
+		// 	}
+		// 	for(var j = 0; j < lis.length; j ++){
+		// 		imgs[j].style.display = "none";
+		// 		lis[j].style.backgroundColor = "#ccc";
+		// 	}
+		// 	imgs[i].style.display = "block";
+		// 	lis[i].style.backgroundColor = "#000";
+		// }
+
+		// juery(淡入淡出)
+		$(function() {
+			var i = 0;
+			var timer = setInterval(carousel,1000);
+			function carousel() {
+				i ++;
+				if(i == 5){
+					i = 0;
+				}
+				$("img").eq(i).fadeIn(500).siblings('img').fadeOut(500);
+				$("li").eq(i).css({"background-color":"#000"}).siblings('li').css({"background-color":"#ccc"})
+			}
+			$("li").mouseenter(function() {
+				// 防止恶意快速滑动小圆圈，所以加定时器
+				clearInterval(timer);
+				var indexI = $(this);
+				    tt = setTimeout(function(){
+					i = indexI.index();
+					$("img").eq(i).stop().fadeIn(500).siblings('img').stop().fadeOut(500);
+					$("li").eq(i).css({"background-color":"#000"}).siblings('li').css({"background-color":"#ccc"})
+					},200);
+				
+			})
+			$("li").mouseleave(function() {
+				clearTimeout(tt);
+				timer = setInterval(carousel,1000);
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>css二级伸缩导航栏</title>
+ 	<link rel="stylesheet" href="reset.css">
+ 	<link rel="stylesheet" href="nav.css">
+ 	<!-- // <script type="text/javascript" src="nav.js"></script> -->
+ </head>
+ <body>
+ 	<div class="nav">
+ 		<div class="title">
+ 			<h2>课程中心</h2>
+ 		</div>
+ 		<div class="list">
+ 			<ul>
+ 				<li class="course">
+ 					<div class="course_title">
+ 						<h3>IT培训</h3>
+ 					</div>
+ 					<div class="course_list">
+ 						<ul>
+ 							<li class="course_name">
+ 								<a href="#">web前端</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">java</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">c++</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">android</a>
+ 							</li>
+ 						</ul>
+ 					</div>
+ 				</li>
+ 				<li class="course">
+ 					<div class="course_title">
+ 						<h3>技能学习</h3>
+ 					</div>
+ 					<div class="course_list">
+ 						<ul>
+ 							<li class="course_name">
+ 								<a href="#">SEO</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">网络营销</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">平面设计</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">淘宝美工</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">office办公</a>
+ 							</li>
+ 						</ul>
+ 					</div>
+ 				</li>
+ 				<li class="course">
+ 					<div class="course_title">
+ 						<h3>语言学习</h3>
+ 					</div>
+ 					<div class="course_list">
+ 						<ul>
+ 							<li class="course_name">
+ 								<a href="#">美式口语</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">韩语</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">日语</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">葡萄牙语</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">西班牙语</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">泰语</a>
+ 							</li>
+ 						</ul>
+ 					</div>
+ 				</li>
+ 				<li class="course">
+ 					<div class="course_title">
+ 						<h3>兴趣爱好</h3>
+ 					</div>
+ 					<div class="course_list">
+ 						<ul>
+ 							<li class="course_name">
+ 								<a href="#">人际关系</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">电脑维护</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">亲子课堂</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">游戏课程</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">DIY</a>
+ 							</li>
+ 							<li class="course_name">
+ 								<a href="#">畜牧业</a>
+ 							</li>
+ 						</ul>
+ 					</div>
+ 				</li>
+ 			</ul>
+ 		</div>
+ 	</div>
+ 	<script>
+ 		var h3 = document.getElementsByClassName('h3'),
+ 			course_list = document.getElementsByClassName('course_list')[0];
+ 		var len = h3.length;
+		for(var i = 0; i < len; i ++) {
+			h3[i].addEventListener("click",function (e) {
+				var event = e || window.event;
+				course_list[0].style.display = "block";
+			},false);
+			// h3[i].addEventListener("mouseout",function (e) {
+			// 		course_list[i].style.display = "none";
+			// 	},false);
+		}
+ 	</script>
+ </body>
+ </html> 

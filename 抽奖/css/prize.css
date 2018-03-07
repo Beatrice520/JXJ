@@ -1,0 +1,13 @@
+.box{
+	width:520px;
+	height:280px;
+	margin:40px auto;
+}
+.button{
+	width:200px;
+	margin:40px auto;
+}
+.button input{
+	width:80px;
+	height:26px;
+}

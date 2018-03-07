@@ -1,0 +1,48 @@
+.nav{
+	width:210px;
+}
+.title{
+	background-color:#000;
+}
+.title h2{
+	color:#fff;
+	line-height:50px;
+	font-size:25px;
+	text-align:center;
+}
+.course{
+	border-top:1px solid #666;
+}
+.course_title{
+	background-color:#000;
+}
+.course_title h3{
+	cursor:pointer;
+	color:#fff;
+	font-size:14px;
+	line-height:40px;
+	text-indent:30px;
+}
+.course_title h3:hover{
+	background-color:#3CB371;
+}
+.course_list{
+	display:none;
+}
+.block{
+	display:block;
+}
+.course_name{
+	background-color:#171717;
+	border-top:1px solid #3f4041;
+}
+.course_name:hover{
+	background-color:#3CB371;
+}
+.course_name a{
+	font-size:12px;
+	color:#fff;
+	line-height:30px;
+	text-indent:50px;
+	display:block;
+}

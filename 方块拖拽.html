@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>小方块移动</title>
+	<script type="text/javascript" src="js-tools.js"></script>
+</head>
+<body>
+	
+	<div style="width:100px;height:100px;background-color:red;
+	position:absolute;left:0;top:0;"></div>
+	<script>
+		// 方法一：普遍实用
+		function drag(elem) {
+			var disX,
+				disY;
+			addEvent(elem,"mousedown",function (e){
+				var event = e || window.event;
+				disX = event.clientX - parseInt(getStyle(elem,'left'));
+				disY = event.clientY - parseInt(getStyle(elem,'top'));
+				addEvent(document,"mousemove",mouseMove);
+				addEvent(elem,"mouseup",mouseUp);
+				stopBubble(event);
+				cancleHandler(event);
+			});
+			function mouseMove(e) {
+				var event = e || window.event;
+				elem.style.left = event.clientX - disX + "px";
+				elem.style.top = event.clientY - disY + "px";
+			}
+			function mouseUp(e) {
+				var event = e || window.event;
+				document.removeEventListener("mousemove",mouseMove,false);
+			}
+		}
+		// 方法二：针对于行间样式
+		var div = document.getElementsByTagName('div')[0];
+		// <!-- div.style.left  只能是行间样式使用 -->
+		// var	disX,
+		// 	    disY;
+		// div.onmousedown = function (e) {
+		// 		var event = e || window.event;
+		// 		disX = e.pageX - parseInt(div.style.left);
+		// 		disY = e.pageY - parseInt(div.style.top);
+		// 		document.onmousemove = function (e) {
+		// 					var event = e || window.event;
+		// 					div.style.left = e.pageX - disX + "px";
+		// 					div.style.top = e.pageY - disY + "px";
+		// 				}
+		// 		div.onmouseup = function () {
+		// 			document.onmousemove = null;
+		// 		}
+		// }
+		
+	</script>
+</body>
+</html>

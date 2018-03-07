@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手风琴</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		ul li{
+			width:85px;
+			height:300px;
+			list-style:none;
+			float:left;
+		}
+		.wrap{
+			width:900px;
+			height:300px;
+			border:2px solid #f40;
+			margin:100px auto;
+			overflow:hidden;
+		}
+		ul li:nth-child(1){
+			background:url('img/0.jpg') no-repeat;
+		}
+		ul li:nth-child(2){
+			background:url('img/1.jpg') no-repeat;
+		}
+		ul li:nth-child(3){
+			background:url('img/2.jpg') no-repeat;
+		}
+		ul li:nth-child(4){
+			background:url('img/3.jpg') no-repeat;
+		}
+		ul li:nth-child(5){
+			width:560px;
+			background:url('img/4.jpg') no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="js/accordion.js"></script>
+</body>
+</html>

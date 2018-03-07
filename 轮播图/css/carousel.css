@@ -1,0 +1,30 @@
+.box{
+	margin:100px auto;
+	width:520px;
+	height:280px;
+	overflow:hidden;
+	border:1px solid #666;
+	position:relative;
+}
+.box img{
+	position:absolute;
+	left:0;
+	top:0;
+	display:none;
+}
+ul li{
+	float:left;
+	width:10px;
+	height:10px;
+	border-radius:50%;
+	background-color:#ccc;
+	opacity:0.6;
+	margin-top:260px;
+	margin-right:5px;
+}
+.li0{
+	background-color:#000;
+}
+.box ul{
+	margin-left:230px;
+}

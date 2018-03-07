@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>顶部下滑大图</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		img{
+			display:block;
+			margin:0 auto;
+		}
+		.top{
+			margin-top:-280px;
+		}
+	</style>
+</head>
+<body>
+	<img src="7.jpg" class="top">
+	<img src="banner.jpg">
+	
+	<script>
+	$(function() {
+		$(".top").stop().animate({"margin-top":"0"},3000,function() {
+			// setTimeout(function() {
+			// 	$(".top").stop().animate({"margin-top":"-280px"},3000);
+			// },3000);
+			$(".top").delay(3000).animate({"margin-top":"-280px"},3000);
+		})
+	})
+	</script>
+</body>
+</html>

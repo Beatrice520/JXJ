@@ -1,0 +1,68 @@
+/*旋转处理、动画处理、伪类处理、三角形绘制、阴影*/
+*{
+	margin:0;
+}
+body{
+	background-color:#2b142f;
+}
+i{
+	font-family:normal;
+	display:block;
+}
+.box{
+	width:80px;
+	height:320px;
+	margin:auto;
+	animation:go 3s infinite;
+	transform-origin:top;/*调整旋转重心*/
+}
+.box:hover{
+	animation-play-state:paused;
+}
+.box:before{
+	content:"";
+	display:block;
+	width:4px;
+	height:220px;
+	margin:auto;
+	background-color:#000;
+}
+.box:after{
+	content:"";
+	display:block;
+	width:0;
+	height:0;
+	border-top:none;
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	border-bottom:30px solid #000;
+	margin:auto;
+	margin-top:-110px;
+
+}
+.bulb{
+	width:80px;
+	height:80px;
+	margin-top:25px;
+	border-radius:50%;
+	box-shadow:0 0 10px 0 #fff inset;
+
+}
+.bulb:after{
+	content:"";
+	display:block;
+	width:20px;
+	height:20px;
+	margin:auto;
+	border-radius:50%;
+	box-shadow:0 0 5px 0 #fff inset;
+}
+.bulb:hover{
+	box-shadow:0 0 200px 0 #fff;
+	background-color:#fff;
+}
+@keyframes go{
+	0%{transform:rotate(30deg);}
+	50%{transform:rotate(-30deg);}
+	100%{transform:rotate(30deg);}
+}

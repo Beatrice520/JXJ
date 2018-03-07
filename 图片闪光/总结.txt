@@ -1,0 +1,11 @@
+1、思路
+
+   闪光：一个颜色渐变的div，根据定位来左右移动，div的倾斜通过css3的transform：skew（）来实现的
+
+         动画效果通过transition来实现的
+
+2、注意
+
+   transition放在闪光的div内，会出现当鼠标移进去闪光往右走，当鼠标移出去闪光又会恢复到原来的状态，
+
+   为了不让闪光恢复到原来的状态，将transition放在hover里面

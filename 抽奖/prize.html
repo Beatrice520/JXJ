@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>抽奖</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/prize.css">
+	<script type="text/javascript" src="js/js-tools.js"></script>
+</head>
+<body>
+	<div class="button">
+		<input type="button" value="开始">
+		<input type="button" value="暂停">
+	</div>
+	<div class="box">
+		<img src="img/1.jpg">
+	</div>
+	<script>
+		var input0 = document.getElementsByTagName('input')[0], 
+		    input1 = document.getElementsByTagName('input')[1],
+		    img = document.getElementsByTagName('img')[0]; 
+    	addEvent(input0,"click",start);
+    	function start(e) {
+    		var event = e || window.event;
+    		clearInterval(timer);
+    		var timer = setInterval(function () {
+    			var prizeArr = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/8.jpg","img/9.jpg","img/10.jpg"];
+    			var num = Math.floor(Math.random() * (prizeArr.length - 1 + 1 - 0) + 0);
+    			img.setAttribute('src',prizeArr[num]);
+    		},100);
+	    	addEvent(input1,"click",function (e) {
+	    		var event = e || window.event;
+	    		clearInterval(timer);
+	    		// 如果想要最后为谢谢惠顾的几率更大，且轮播的时候概率都一样
+	    		var re = Math.random() * 10;
+	    		if(re < 3) {
+	    			img.setAttribute("src","img/7.jpg");
+	    		}
+	    	});
+    	}
+	</script>
+</body>
+</html>
